@@ -8,10 +8,11 @@ class Game {
     if(this._board[rowIndex][columnIndex] === 'B'){
       console.log('Game over!');
       this._board.print();
-    }else if(this._board.hasSafeTiles){
-      //continue playing
+    }else if(!this._board.hasSafeTiles){
+      console.log('Congrats on winning');
     }else{
-      //game won
+      console.log('Current board:')
+      this._board.printBoard();
     }
   }
 }
