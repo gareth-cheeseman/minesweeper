@@ -1,3 +1,34 @@
+class Game {
+  constructor (numberOfRows, numberOfColumns, numberOfBombs){
+    this._board = new Board(numberOfRows, numberOfRows, numberOfBombs);
+
+  }
+  playMove (rowIndex, columnIndex){
+    this._board.flipTile(rowIndex, columnIndex);
+    if(this._board[rowIndex][columnIndex] === 'B'){
+      console.log('Game over!');
+      this._board.print();
+    }else if(this._board.hasSafeTiles){
+      //continue playing
+    }else{
+      //game won
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class Board {
